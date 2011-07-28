@@ -19,7 +19,6 @@ License: 	GPLv2+
 Group: 		Video
 Url: 		http://x264.nl/
 
-BuildRequires:	gpac-devel
 BuildRequires:	yasm
 BuildRequires: git-core
 BuildRequires:	libx11-devel
