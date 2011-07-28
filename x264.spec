@@ -16,7 +16,7 @@ Release: 	%{release}
 Source0: 	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 
 License: 	GPLv2+
-Group: 		Applications/Multimedia
+Group: 		Video
 Url: 		http://x264.nl/
 
 BuildRequires:	gpac-devel
