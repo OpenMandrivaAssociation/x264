@@ -37,17 +37,17 @@ by software patents.
 
 %package -n %{libname}
 Summary: Shared library of x264
-Group: System Environment/Libraries
+Group: System/Libraries
 
 %description -n %{libname}
 x264 dynamic libraries
 
 %package -n %develname
 Summary: H264/AVC encoding library headers
-Group: Development/Libraries
-Requires: %{libname} = %{epoch}:%{version}
-Provides: lib%{name}-devel = %{epoch}:%{version}-%{release}
-Provides: %{name}-devel = %{epoch}:%{version}-%{release}
+Group: Development/C
+Requires: %{libname} = %{version}-%release
+Provides: lib%{name}-devel = %{version}-%{release}
+Provides: %{name}-devel = %{version}-%{release}
 
 %description -n %develname
 x264 is a free library for encoding H264/AVC video streams. The code
