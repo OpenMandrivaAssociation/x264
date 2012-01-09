@@ -40,7 +40,6 @@ x264 dynamic libraries
 Summary:	H264/AVC encoding library headers
 Group:		Development/C
 Requires:	%{libname} = %{version}-%release
-Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n	%{devname}
