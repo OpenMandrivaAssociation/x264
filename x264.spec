@@ -1,4 +1,4 @@
-Summary: 	H264/AVC encoder
+Summary:	H264/AVC encoder
 Name: 		x264
 %define	major	120
 Version: 	0.%{major}
@@ -52,6 +52,7 @@ released under the terms of the GPL license.
 %setup -q -n %{fname}
 
 %build
+CFLAGS="%{optflags} -Ofast" \
 %configure2_5x	--enable-shared \
 		--enable-pic \
 		--enable-visualize \
