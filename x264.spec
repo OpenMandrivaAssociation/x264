@@ -39,8 +39,8 @@ x264 dynamic libraries
 %package -n	%{devname}
 Summary:	H264/AVC encoding library headers
 Group:		Development/C
-Requires:	%{libname} = %{version}-%release
-Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n	%{devname}
 x264 is a free library for encoding H264/AVC video streams. The code
