@@ -65,11 +65,9 @@ ln -sf libx264.so.%{major} %{buildroot}%{_libdir}/libx264.so
 %{_bindir}/%{name}
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/libx264.so.%{major}*
 
 %files -n %{devname}
-%defattr(-,root,root)
 %{_libdir}/libx264.a
 %{_libdir}/libx264.so
 %{_includedir}/*.h
