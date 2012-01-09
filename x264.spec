@@ -1,8 +1,9 @@
 Summary: 	H264/AVC encoder
 Name: 		x264
+%define	major	120
 Version: 	0.%{major}
 %define	date	20111212
-Release: 	0.%{data}.1
+Release: 	0.%{date}.1
 %define	rev	2245
 %define	fname	%{name}-snapshot-%{date}-%{rev}
 Source0: 	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
@@ -25,7 +26,6 @@ released under the terms of the GPL license.
 This package is in tainted repository as the video encoder may be covered
 by software patents.
 
-%define	major	120
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}
 
@@ -52,8 +52,10 @@ released under the terms of the GPL license.
 %setup -q -n %{fname}
 
 %build
-./configure --enable-shared --enable-pic --enable-visualize --enable-static \
-	--extra-cflags="%{optflags}" --extra-ldflags="%{ldflags}" --prefix=/usr
+%configure2_5x	--enable-shared \
+		--enable-pic \
+		--enable-visualize \
+		--enable-static \
 %make
 
 %install
