@@ -13,8 +13,8 @@ Url: 		http://x264.nl/
 
 BuildRequires:	yasm
 BuildRequires:	git-core
-BuildRequires:	libx11-devel
-BuildRequires:	ffmpeg-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(libavfilter)
 
 %description
 x264 is a free library for encoding H264/AVC video streams. The code
