@@ -1,16 +1,16 @@
 Summary:	H264/AVC encoder
-Name: 		x264
+Name:		x264
 %define	major	120
-Version: 	0.%{major}
+Version:	0.%{major}
 %define	date	20111212
-Release: 	0.%{date}.1
+Release:	0.%{date}.1
 %define	rev	2245
 %define	fname	%{name}-snapshot-%{date}-%{rev}
-Source0: 	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
+Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 
-License: 	GPLv2+
-Group: 		Video
-Url: 		http://x264.nl/
+License:	GPLv2+
+Group:		Video
+Url:		http://x264.nl/
 
 BuildRequires:	yasm
 BuildRequires:	git-core
@@ -56,12 +56,11 @@ CFLAGS="%{optflags} -Ofast" \
 %configure2_5x	--enable-shared \
 		--enable-pic \
 		--enable-visualize \
-		--enable-static \
+		--enable-static
 %make
 
 %install
 %makeinstall
-ln -sf libx264.so.%{major} %{buildroot}%{_libdir}/libx264.so
 
 %files
 %doc AUTHORS doc/*
