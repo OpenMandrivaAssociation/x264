@@ -1,7 +1,7 @@
-%define major   115
+%define major   120
 %define name 	x264
 %define version 0.%{major}
-%define date 20110623
+%define date 20111212
 %define rev 2245
 %define release %mkrel -c %{date} 1
 
