@@ -1,8 +1,8 @@
 Summary:	H264/AVC encoder
 Name:		x264
-%define	major	125
+%define	major	129
 Version:	0.%{major}
-%define	date	20121015
+%define	date	20130214
 Release:	0.%{date}.1
 %define	rev	2245
 %define	fname	%{name}-snapshot-%{date}-%{rev}-stable
