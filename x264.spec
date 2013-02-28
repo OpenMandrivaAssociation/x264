@@ -1,13 +1,16 @@
+%define major 129
+%define date 20130214
+%define rev 2245
+%define fname %{name}-snapshot-%{date}-%{rev}-stable
+%define libname	%mklibname %{name}_ %{major}
+%define devname	%mklibname -d %{name}
+%define staticname %mklibname -d %{name}-static
+
 Summary:	H264/AVC encoder
 Name:		x264
-%define	major	129
 Version:	0.%{major}
-%define	date	20130214
-Release:	0.%{date}.1
-%define	rev	2245
-%define	fname	%{name}-snapshot-%{date}-%{rev}-stable
+Release:	0.%{date}.2
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
-
 License:	GPLv2+
 Group:		Video
 Url:		http://x264.nl/
@@ -26,16 +29,13 @@ released under the terms of the GPL license.
 This package is in tainted repository as the video encoder may be covered
 by software patents.
 
-%define	libname	%mklibname %{name}_ %{major}
-%define	devname	%mklibname -d %{name}
-%define staticname %mklibname -d %{name}-static
-
 %package -n	%{libname}
 Summary:	Shared library of x264
 Group:		System/Libraries
+Obsoletes:	%{mklibname x264_ 120} <= 0.120
 
 %description -n	%{libname}
-x264 dynamic libraries
+x264 dynamic libraries.
 
 %package -n	%{devname}
 Summary:	H264/AVC encoding library headers
@@ -55,7 +55,7 @@ Group:		Development/C
 Requires:	%{devname} = %{EVRD}
 
 %description -n %{staticname}
-Static library for the x264 H264/AVC encoding library
+Static library for the x264 H264/AVC encoding library.
 
 %prep
 %setup -q -n %{fname}
