@@ -33,6 +33,7 @@ by software patents.
 Summary:	Shared library of x264
 Group:		System/Libraries
 Obsoletes:	%{mklibname x264_ 120} <= 0.120
+Obsoletes:	%{mklibname x264_ 124} <= 0.124
 
 %description -n	%{libname}
 x264 dynamic libraries.
