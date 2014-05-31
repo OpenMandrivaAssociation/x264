@@ -9,7 +9,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.2
+Release:	0.%{date}.3
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 License:	GPLv2+
 Group:		Video
@@ -18,7 +18,6 @@ Url:		http://x264.nl/
 BuildRequires:	yasm
 BuildRequires:	git-core
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(libavfilter)
 
 %description
 x264 is a free library for encoding H264/AVC video streams. The code
