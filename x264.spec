@@ -26,7 +26,7 @@ is written by Laurent Aimar, Eric Petit(OS X), Min Chen (vfw/nasm),
 Justin Clay(vfw), Måns Rullgård and Loren Merritt from scratch. It is
 released under the terms of the GPL license.
 
-This package is in tainted repository as the video encoder may be covered
+This package is in restricted repository as the video encoder may be covered
 by software patents.
 
 %package -n	%{libname}
