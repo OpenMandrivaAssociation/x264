@@ -1,5 +1,5 @@
 %define major 142
-%define date 20140318
+%define date 20140613
 %define rev 2245
 %define fname %{name}-snapshot-%{date}-%{rev}-stable
 %define libname	%mklibname %{name}_ %{major}
@@ -9,7 +9,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.3
+Release:	0.%{date}.1
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 License:	GPLv2+
 Group:		Video
