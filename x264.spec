@@ -1,15 +1,15 @@
-%define major 142
-%define date 20140615
-%define rev 2245
-%define fname %{name}-snapshot-%{date}-%{rev}-stable
+%define major	142
+%define date	20140615
+%define rev	2245
+%define fname	%{name}-snapshot-%{date}-%{rev}-stable
 %define libname	%mklibname %{name}_ %{major}
 %define devname	%mklibname -d %{name}
-%define staticname %mklibname -d %{name}-static
+%define	static	%mklibname -d -s %{name}
 
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.3
+Release:	0.%{date}.1
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 License:	GPLv2+
 Group:		Video
@@ -49,12 +49,12 @@ is written by Laurent Aimar, Eric Petit(OS X), Min Chen (vfw/nasm),
 Justin Clay(vfw), Måns Rullgård and Loren Merritt from scratch. It is
 released under the terms of the GPL license.
 
-%package -n	%{staticname}
+%package -n	%{static}
 Summary:	Static library for the x264 H264/AVC encoding library
 Group:		Development/C
 Requires:	%{devname} = %{EVRD}
 
-%description -n %{staticname}
+%description -n %{static}
 Static library for the x264 H264/AVC encoding library.
 
 %prep
@@ -83,5 +83,5 @@ CFLAGS="%{optflags} -Ofast" \
 %{_includedir}/*.h
 %{_libdir}/pkgconfig/*.pc
 
-%files -n %{staticname}
+%files -n %{static}
 %{_libdir}/libx264.a
