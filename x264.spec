@@ -11,12 +11,14 @@ Name:		x264
 Version:	0.%{major}
 Release:	0.%{date}.1
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
+Patch0:		x264-dynamically-link-against-gpac.patch
 License:	GPLv2+
 Group:		Video
 Url:		http://x264.nl/
 
 BuildRequires:	yasm
 BuildRequires:	git-core
+BuildRequires:	pkgconfig(gpac)
 BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(x11)
 
@@ -60,6 +62,7 @@ Static library for the x264 H264/AVC encoding library.
 
 %prep
 %setup -q -n %{fname}
+%patch0 -p1 -b .gpac~
 
 %build
 CFLAGS="%{optflags} -Ofast" \
