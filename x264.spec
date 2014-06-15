@@ -17,6 +17,7 @@ Url:		http://x264.nl/
 
 BuildRequires:	yasm
 BuildRequires:	git-core
+BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(x11)
 
 %description
