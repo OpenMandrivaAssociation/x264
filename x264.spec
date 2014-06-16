@@ -1,9 +1,9 @@
-%define major	142
-%define date	20140615
-%define rev	2245
-%define fname	%{name}-snapshot-%{date}-%{rev}-stable
-%define libname	%mklibname %{name}_ %{major}
-%define devname	%mklibname -d %{name}
+%define	major	142
+%define	date	20140615
+%define	rev	2245
+%define	fname	%{name}-snapshot-%{date}-%{rev}-stable
+%define	libname	%mklibname %{name}_ %{major}
+%define	devname	%mklibname -d %{name}
 %define	static	%mklibname -d -s %{name}
 
 Summary:	H264/AVC encoder
@@ -56,6 +56,7 @@ released under the terms of the GPL license.
 Summary:	Static library for the x264 H264/AVC encoding library
 Group:		Development/C
 Requires:	%{devname} = %{EVRD}
+Provides:	%{name}-static-devel = %{EVRD}
 
 %description -n %{static}
 Static library for the x264 H264/AVC encoding library.
