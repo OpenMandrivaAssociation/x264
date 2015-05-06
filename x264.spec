@@ -68,9 +68,8 @@ Static library for the x264 H264/AVC encoding library.
 
 %build
 CFLAGS="%{optflags} -Ofast" \
-%configure2_5x	--enable-shared \
+./configure	--enable-shared \
 		--enable-pic \
-		--enable-visualize \
 		--enable-static
 %make
 
