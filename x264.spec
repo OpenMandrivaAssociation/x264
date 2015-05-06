@@ -12,6 +12,7 @@ Version:	0.%{major}
 Release:	0.%{date}.1
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.xz
 Patch0:		x264-dynamically-link-against-gpac.patch
+Patch1:		x264-arm.patch
 License:	GPLv2+
 Group:		Video
 Url:		http://x264.nl/
@@ -63,7 +64,7 @@ Static library for the x264 H264/AVC encoding library.
 
 %prep
 %setup -q -n %{fname}
-%patch0 -p1 -b .gpac~
+%apply_patches
 
 %build
 CFLAGS="%{optflags} -Ofast" \
