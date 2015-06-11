@@ -1,6 +1,6 @@
 %define	major	144
-%define	date	20150506
-%define	time	1755
+%define	date	20150611
+%define	time	1947
 %define	fname	%{name}-snapshot-%{date}-%{time}-stable
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}
