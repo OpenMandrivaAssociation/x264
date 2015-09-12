@@ -1,15 +1,15 @@
---- x264-snapshot-20140615-2245-stable/configure.gpac~	2014-06-15 22:59:08.159483496 +0200
-+++ x264-snapshot-20140615-2245-stable/configure	2014-06-15 22:59:12.232855791 +0200
-@@ -109,7 +109,7 @@ icl_ldflags() {
+--- x264-snapshot-20150911-2245-stable/configure.0000~	2015-09-11 22:45:06.000000000 +0200
++++ x264-snapshot-20150911-2245-stable/configure	2015-09-12 16:27:52.108270155 +0200
+@@ -118,7 +118,7 @@ cl_ldflags() {
  
          arg=${arg/pthreadGC/pthreadVC}
          [ "$arg" = avifil32.lib ] && arg=vfw32.lib
 -        [ "$arg" = gpac_static.lib ] && arg=libgpac_static.lib
 +        [ "$arg" = gpac.lib ] && arg=libgpac.lib
+         [ "$arg" = x264.lib ] && arg=libx264.lib
  
          [ -n "$arg" ] && echo -n "$arg "
-     done
-@@ -946,7 +946,7 @@ fi
+@@ -1058,7 +1058,7 @@ fi
  
  if [ "$gpac" = "auto" -a "$lsmash" != "yes" ] ; then
      gpac="no"
