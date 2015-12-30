@@ -6,10 +6,12 @@
 %define	devname	%mklibname -d %{name}
 %define	static	%mklibname -d -s %{name}
 
+%define _disable_lto 1
+
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.1
+Release:	0.%{date}.2
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.xz
 Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
