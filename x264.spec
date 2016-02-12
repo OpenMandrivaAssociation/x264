@@ -1,6 +1,6 @@
-%define	major	144
-%define	date	20150611
-%define	time	1947
+%define	major	148
+%define	date	20160211
+%define	time	2245
 %define	fname	%{name}-snapshot-%{date}-%{time}-stable
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}
@@ -12,7 +12,7 @@ Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
 Release:	0.%{date}.2
-Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.xz
+Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
 License:	GPLv2+
