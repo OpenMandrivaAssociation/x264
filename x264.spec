@@ -11,7 +11,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.2
+Release:	0.%{date}.3
 Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
 Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
