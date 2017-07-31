@@ -1,10 +1,10 @@
---- x264-snapshot-20150506-1755-stable/configure.omv~	2015-05-06 20:39:24.936451517 +0200
-+++ x264-snapshot-20150506-1755-stable/configure	2015-05-06 20:40:13.566817481 +0200
-@@ -775,6 +775,7 @@ fi
+--- x264-snapshot-20170730-2245-stable/configure.0001~	2017-07-31 09:46:26.818914012 +0200
++++ x264-snapshot-20170730-2245-stable/configure	2017-07-31 09:50:07.175652142 +0200
+@@ -891,6 +891,7 @@ fi
  if [ $asm = auto -a $ARCH = ARM ] ; then
      # set flags so neon is built by default
-     echo $CFLAGS | grep -Eq '(-mcpu|-march|-mfpu)' || CFLAGS="$CFLAGS -mcpu=cortex-a8 -mfpu=neon"
+     [ $compiler == CL ] || echo $CFLAGS | grep -Eq '(-mcpu|-march|-mfpu)' || CFLAGS="$CFLAGS -mcpu=cortex-a8 -mfpu=neon"
 +    CFLAGS="$CFLAGS -Wa,-march=armv7-a -Wa,-mfpu=neon"
  
-     if  cc_check '' '' '__asm__("rev ip, ip");' ; then      define HAVE_ARMV6
-         cc_check '' '' '__asm__("movt r0, #0");'         && define HAVE_ARMV6T2
+     cc_check '' '' '__asm__("add r0, r1, r2");' && define HAVE_ARM_INLINE_ASM
+     if [ $compiler = CL ] && cpp_check '' '' 'defined(_M_ARM) && _M_ARM >= 7' ; then
