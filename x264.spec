@@ -20,6 +20,9 @@ Group:		Video
 Url:		http://x264.nl/
 
 BuildRequires:	yasm
+%ifarch %{ix86} x86_64
+BuildRequires:	nasm >= 2.13
+%endif
 BuildRequires:	git-core
 BuildRequires:	pkgconfig(gpac)
 BuildRequires:	pkgconfig(libavformat)
