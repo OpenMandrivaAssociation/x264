@@ -20,7 +20,7 @@ Group:		Video
 Url:		http://x264.nl/
 
 BuildRequires:	yasm
-%ifarch %{ix86} x86_64
+%ifarch %{ix86} %{x86_64}
 BuildRequires:	nasm >= 2.13
 %endif
 BuildRequires:	git-core
