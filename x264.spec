@@ -69,7 +69,7 @@ Static library for the x264 H264/AVC encoding library.
 
 %prep
 %setup -q -n %{fname}
-%apply_patches
+%autopatch -p1
 
 %build
 CFLAGS="%{optflags} -Ofast" \
