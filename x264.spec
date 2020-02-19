@@ -1,19 +1,18 @@
-%define	major	157
-%define	date	20190812
-%define	time	2245
-%define	fname	%{name}-snapshot-%{date}-%{time}-stable
+%define	major	159
+%define	date	20200219
+%define	git	1771b556ee45207f8711744ccbd5d42a3949b14c
+%define	fname	%{name}-stable-%{git}
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}
 %define	static	%mklibname -d -s %{name}
 
 %define _disable_lto 1
-%define optflags -Ofast --rtlib=compiler-rt
 
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
 Release:	0.%{date}.1
-Source0:	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/%fname.tar.bz2
+Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
 Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
 License:	GPLv2+
@@ -72,9 +71,10 @@ Static library for the x264 H264/AVC encoding library.
 %autosetup -n %{fname} -p1
 
 %build
+sed -i -e 's|-O3 -ffast-math|%{optflags}|g' configure
 %configure	--enable-shared \
+		--enable-static \
 		--enable-pic \
-		--enable-static
 %make_build
 
 %install
