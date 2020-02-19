@@ -77,7 +77,7 @@ Static library for the x264 H264/AVC encoding library.
 	--enable-pic \
 	--enable-static
 
-%make_build AR="%{_bindir}/ar" RANLIB="%{_bindir}/ranlib"
+%make_build AR="%{_bindir}/ar " RANLIB="%{_bindir}/ranlib "
 
 %install
 %make_install
