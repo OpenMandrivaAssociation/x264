@@ -7,6 +7,7 @@
 %define	static	%mklibname -d -s %{name}
 
 %define _disable_lto 1
+%define optflags -Ofast --rtlib=compiler-rt
 
 Summary:	H264/AVC encoder
 Name:		x264
@@ -68,18 +69,16 @@ Provides:	%{name}-static-devel = %{EVRD}
 Static library for the x264 H264/AVC encoding library.
 
 %prep
-%setup -q -n %{fname}
-%autopatch -p1
+%autosetup -n %{fname} -p1
 
 %build
-CFLAGS="%{optflags} -Ofast" \
 %configure	--enable-shared \
 		--enable-pic \
 		--enable-static
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 %files
 %doc AUTHORS doc/*
