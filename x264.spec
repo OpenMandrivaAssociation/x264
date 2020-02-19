@@ -7,7 +7,7 @@
 %define static %mklibname -d -s %{name}
 
 %define _disable_lto 1
-%global optflags %{optflags} -Ofast
+%global optflags %{optflags} -Ofast -fuse-ld=bfd
 
 Summary:	H264/AVC encoder
 Name:		x264
