@@ -7,7 +7,7 @@
 %define static %mklibname -d -s %{name}
 
 %define _disable_lto 1
-#global optflags %{optflags}
+%global optflags %{optflags} -O3
 
 Summary:	H264/AVC encoder
 Name:		x264
@@ -72,14 +72,12 @@ Static library for the x264 H264/AVC encoding library.
 %autosetup -n %{fname} -p1
 
 %build
-sed -i -e 's/-lm//g' configure
-
 %configure \
 	--enable-shared \
 	--enable-pic \
 	--enable-static
 
-%make_build
+%make_build -j1
 
 %install
 %make_install
