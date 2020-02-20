@@ -79,7 +79,7 @@ sed -i -e 's/-lm//g' configure
 	--enable-pic \
 	--enable-static
 
-%make_build AR="ar " RANLIB="ranlib "
+%make_build
 
 %install
 %make_install
