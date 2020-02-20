@@ -7,6 +7,7 @@
 %define	static	%mklibname -d -s %{name}
 
 %define _disable_lto 1
+%global optflags %{optflags} -O3
 
 Summary:	H264/AVC encoder
 Name:		x264
@@ -37,28 +38,28 @@ released under the terms of the GPL license.
 This package is in restricted repository as the video encoder may be covered
 by software patents.
 
-%package -n	%{libname}
+%package -n %{libname}
 Summary:	Shared library of x264
 Group:		System/Libraries
 Obsoletes:	%{mklibname x264_ 120} <= 0.120
 Obsoletes:	%{mklibname x264_ 124} <= 0.124
 
-%description -n	%{libname}
+%description -n %{libname}
 x264 dynamic libraries.
 
-%package -n	%{devname}
+%package -n %{devname}
 Summary:	H264/AVC encoding library headers
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
-%description -n	%{devname}
+%description -n %{devname}
 x264 is a free library for encoding H264/AVC video streams. The code
 is written by Laurent Aimar, Eric Petit(OS X), Min Chen (vfw/nasm),
 Justin Clay(vfw), Måns Rullgård and Loren Merritt from scratch. It is
 released under the terms of the GPL license.
 
-%package -n	%{static}
+%package -n %{static}
 Summary:	Static library for the x264 H264/AVC encoding library
 Group:		Development/C
 Requires:	%{devname} = %{EVRD}
