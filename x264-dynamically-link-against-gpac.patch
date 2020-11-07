@@ -1,11 +1,12 @@
---- x264-snapshot-20160211-2245-stable/configure.0000~	2016-02-11 22:45:08.000000000 +0100
-+++ x264-snapshot-20160211-2245-stable/configure	2016-02-12 13:44:04.696827448 +0100
-@@ -1095,7 +1095,7 @@ fi
+diff -up x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure.1~ x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure
+--- x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure.1~	2020-11-07 21:53:59.285644378 +0100
++++ x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure	2020-11-07 21:55:50.246204653 +0100
+@@ -1244,7 +1244,7 @@ fi
  
  if [ "$gpac" = "auto" -a "$lsmash" != "yes" ] ; then
      gpac="no"
 -    GPAC_LIBS="-lgpac_static"
 +    GPAC_LIBS="-lgpac"
      cc_check "" -lz && GPAC_LIBS="$GPAC_LIBS -lz"
+     cc_check "" -ldl && GPAC_LIBS="$GPAC_LIBS -ldl"
      if [ "$SYS" = "WINDOWS" ] ; then
-         cc_check "" -lws2_32 && GPAC_LIBS="$GPAC_LIBS -lws2_32"

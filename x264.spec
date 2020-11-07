@@ -1,6 +1,6 @@
-%define	major	159
-%define	date	20200417
-%define	git	296494a4011f58f32adc54304a2654627558c59a
+%define	major	161
+%define	date	20201107
+%define	git	d198931a63049db1f2c92d96c34904c69fde8117
 %define	fname	%{name}-stable-%{git}
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}
@@ -143,6 +143,7 @@ cd ..
 %files
 %doc AUTHORS doc/*
 %{_bindir}/%{name}
+%{_datadir}/bash-completion/completions/*
 
 %files -n %{libname}
 %{_libdir}/libx264.so.%{major}*
