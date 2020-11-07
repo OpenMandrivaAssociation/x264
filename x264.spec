@@ -40,6 +40,7 @@ BuildRequires:	pkgconfig(x11)
 %if %{with compat32}
 BuildRequires:	devel(libX11)
 %endif
+BuildRequires:	pkgconfig(bash-completion)
 
 %description
 x264 is a free library for encoding H264/AVC video streams. The code
