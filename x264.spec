@@ -1,6 +1,6 @@
-%define	major	161
-%define	date	20210409
-%define	git	544c61f082194728d0391fb280a6e138ba320a96
+%define	major	163
+%define	date	20210901
+%define	git	5db6aa6cab1b146e07b60cc1736a01f21da01154
 %define	fname	%{name}-stable-%{git}
 %define	libname	%mklibname %{name}_ %{major}
 %define	devname	%mklibname -d %{name}

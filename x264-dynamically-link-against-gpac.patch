@@ -1,12 +1,12 @@
-diff -up x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure.1~ x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure
---- x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure.1~	2020-11-07 21:53:59.285644378 +0100
-+++ x264-stable-d198931a63049db1f2c92d96c34904c69fde8117/configure	2020-11-07 21:55:50.246204653 +0100
-@@ -1244,7 +1244,7 @@ fi
- 
- if [ "$gpac" = "auto" -a "$lsmash" != "yes" ] ; then
-     gpac="no"
--    GPAC_LIBS="-lgpac_static"
-+    GPAC_LIBS="-lgpac"
-     cc_check "" -lz && GPAC_LIBS="$GPAC_LIBS -lz"
-     cc_check "" -ldl && GPAC_LIBS="$GPAC_LIBS -ldl"
-     if [ "$SYS" = "WINDOWS" ] ; then
+diff -up x264-stable-5db6aa6cab1b146e07b60cc1736a01f21da01154/configure.1~ x264-stable-5db6aa6cab1b146e07b60cc1736a01f21da01154/configure
+--- x264-stable-5db6aa6cab1b146e07b60cc1736a01f21da01154/configure.1~	2021-09-01 01:30:53.783596575 +0200
++++ x264-stable-5db6aa6cab1b146e07b60cc1736a01f21da01154/configure	2021-09-01 01:31:45.344886772 +0200
+@@ -1266,7 +1266,7 @@ if [ "$gpac" = "auto" -a "$lsmash" != "y
+         fi
+     fi
+     if [ -z "$GPAC_LIBS" ] ; then
+-        GPAC_LIBS="-lgpac_static"
++        GPAC_LIBS="-lgpac"
+         cc_check "" -lz && GPAC_LIBS="$GPAC_LIBS -lz"
+         cc_check "" -ldl && GPAC_LIBS="$GPAC_LIBS -ldl"
+         if [ "$SYS" = "WINDOWS" ] ; then
