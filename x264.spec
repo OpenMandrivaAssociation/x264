@@ -39,6 +39,7 @@ BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(x11)
 %if %{with compat32}
 BuildRequires:	devel(libX11)
+BuildRequires:  libc6
 %endif
 BuildRequires:	pkgconfig(bash-completion)
 Requires:	%{libname} = %{EVRD}
