@@ -35,7 +35,7 @@ BuildRequires:	nasm >= 2.13
 %endif
 BuildRequires:	git-core
 BuildRequires:	pkgconfig(gpac)
-BuildRequires:	pkgconfig(libavformat)
+BuildRequires:	pkgconfig(ffmpeg)
 BuildRequires:	pkgconfig(x11)
 %if %{with compat32}
 BuildRequires:	devel(libX11)
