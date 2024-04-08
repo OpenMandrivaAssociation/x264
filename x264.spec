@@ -1,6 +1,6 @@
 %define	major	164
-%define	date	20220601
-%define	git	baee400fa9ced6f5481a728138fed6e867b0ff7f
+%define	date	20231001
+%define	git	31e19f92f00c7003fa115047ce50978bc98c3a0d
 %define	fname	%{name}-stable-%{git}
 %define	libname	%mklibname %{name}
 %define	devname	%mklibname -d %{name}
@@ -21,7 +21,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	0.%{date}.6
+Release:	0.%{date}.1
 Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
 Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
