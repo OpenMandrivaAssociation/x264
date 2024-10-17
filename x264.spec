@@ -27,7 +27,7 @@ Patch0:		x264-dynamically-link-against-gpac.patch
 Patch1:		x264-arm.patch
 License:	GPLv2+
 Group:		Video
-Url:		http://x264.nl/
+Url:		https://x264.nl/
 
 BuildRequires:	yasm
 %ifarch %{ix86} %{x86_64}
