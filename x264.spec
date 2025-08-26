@@ -21,13 +21,11 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	
+Release:	0.%{date}.2
 Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
-Patch0:		x264-dynamically-link-against-gpac.patch
-Patch1:		x264-arm.patch
 License:	GPLv2+
 Group:		Video
-Url:		https://x264.nl/
+Url:		https://www.videolan.org/developers/x264.html
 
 BuildRequires:	yasm
 %ifarch %{ix86} %{x86_64}
@@ -43,6 +41,12 @@ BuildRequires:  libc6
 %endif
 BuildRequires:	pkgconfig(bash-completion)
 Requires:	%{libname} = %{EVRD}
+
+%patchlist
+x264-dynamically-link-against-gpac.patch
+x264-arm.patch
+# Fix build with current ffmpeg
+https://code.videolan.org/videolan/x264/-/commit/32c3b801191522961102d4bea292cdb61068d0dd.patch
 
 %description
 x264 is a free library for encoding H264/AVC video streams. The code
