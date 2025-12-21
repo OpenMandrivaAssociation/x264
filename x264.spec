@@ -27,6 +27,11 @@ License:	GPLv2+
 Group:		Video
 Url:		https://www.videolan.org/developers/x264.html
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	yasm
 %ifarch %{ix86} %{x86_64}
 BuildRequires:	nasm >= 2.13
