@@ -23,7 +23,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	9
+Release:	10
 Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
 License:	GPLv2+
 Group:		Video
@@ -43,8 +43,11 @@ BuildRequires:	pkgconfig(gpac)
 BuildRequires:	pkgconfig(libavcodec)
 BuildRequires:	pkgconfig(x11)
 %if %{with compat32}
+# Native multilib toolchain (needed for -m32 configure smoke test)
+BuildRequires:	gcc
+BuildRequires:	gcc-c++
 BuildRequires:	devel(libX11)
-BuildRequires:  libc6
+BuildRequires:	libc6
 %endif
 BuildRequires:	pkgconfig(bash-completion)
 Requires:	%{libname} = %{EVRD}
@@ -123,9 +126,11 @@ sed -i -e 's|-O3 -ffast-math|%{optflags}|g' configure
 mkdir build32
 cp -a $(ls |grep -v build32) build32/
 cd build32
-export CFLAGS="$(echo %{optflags} |sed -e 's,-m64,,g') -m32"
-export LDFLAGS="$(echo %{ldflags} |sed -e 's,-m64,,g') -m32"
-export CC=gcc
+export CFLAGS="$(echo %{optflags} |sed -e 's,-m64,,g;s,-march=[^ ]*,,g') -m32"
+export LDFLAGS="$(echo %{ldflags} |sed -e 's,-m64,,g;s,-march=[^ ]*,,g') -m32"
+# Use gcc -m32 explicitly (same approach as ffmpeg compat32); plain CC=gcc can fail the
+# configure compiler smoke test when the default driver is clang.
+export CC="gcc -m32"
 ./configure --host=i686-openmandriva-linux-gnu \
 	--prefix=%{_prefix} \
 	--libdir=%{_prefix}/lib \
