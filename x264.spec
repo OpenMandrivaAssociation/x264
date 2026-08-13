@@ -11,19 +11,17 @@
 # gpac headers poison strcpy unless this is defined (x264 still uses strcpy in CLI)
 %global optflags %{optflags} -DGPAC_ALLOW_UNSAFE_STRFUNC
 
-# x264 is used by ffmpeg, ffmpeg is used by wine
-%ifarch %{x86_64}
-%bcond_without compat32
-%else
+# x264 is used by ffmpeg, ffmpeg is used by wine.
+# 32-bit multilib (gcc -m32) currently fails on x86_64 ABF builders
+# ("No working C compiler found"); build 64-bit only until multilib is fixed.
 %bcond_with compat32
-%endif
 %define lib32name lib%{name}
 %define dev32name lib%{name}-devel
 
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	10
+Release:	11
 Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
 License:	GPLv2+
 Group:		Video
