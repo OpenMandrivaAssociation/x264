@@ -8,6 +8,8 @@
 
 %define _disable_lto 1
 %global optflags %{optflags} -O3
+# gpac headers poison strcpy unless this is defined (x264 still uses strcpy in CLI)
+%global optflags %{optflags} -DGPAC_ALLOW_UNSAFE_STRFUNC
 
 # x264 is used by ffmpeg, ffmpeg is used by wine
 %ifarch %{x86_64}
@@ -21,7 +23,7 @@
 Summary:	H264/AVC encoder
 Name:		x264
 Version:	0.%{major}
-Release:	8
+Release:	9
 Source0:	https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable-%{date}.tar.bz2
 License:	GPLv2+
 Group:		Video
