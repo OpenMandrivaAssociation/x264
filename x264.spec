@@ -179,6 +179,3 @@ cd ..
 %{_prefix}/lib/libx264.so
 %{_prefix}/lib/pkgconfig/*.pc
 %endif
-
-# keep %mklibname visible for rpmlint SpecCheck (checks last line only)
-# %mklibname
